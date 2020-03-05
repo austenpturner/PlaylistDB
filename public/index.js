@@ -59,29 +59,38 @@ const searchListeners = () => {
     
     btnSearch.addEventListener('click', function(e) {
         e.preventDefault();
-        const value = searchInput.value;
-        console.log(value);
+        const searchType = ((btnSearch.previousElementSibling).firstElementChild).textContent;
+        console.log(searchType);
+        const searchData = searchInput.value;
+        console.log(searchData);
     });
 };
 
 const updateListeners = () => {
     updateRadioContainer.addEventListener('click', function(e) {
         if (e.target.id === 'title-update') {
-            refLabel.textContent = 'Enter Current Song Title';
-            updateLabel.textContent = 'Enter New Song Title';
+            refLabel.textContent = 'Enter Current Title';
+            updateLabel.textContent = 'Enter New Title';
         } else if (e.target.id === 'artist-update') {
-            refLabel.textContent = 'Enter Target Song Title';
-            updateLabel.textContent = 'Enter Updated Song Artist';
+            refLabel.textContent = 'Enter Song Title';
+            updateLabel.textContent = 'Enter Updated Artist';
         } else if (e.target.id === 'genre-update') {
-            refLabel.textContent = 'Enter Target Song Title';
-            updateLabel.textContent = 'Enter Updated Song Genre';
+            refLabel.textContent = 'Enter Song Title';
+            updateLabel.textContent = 'Enter Updated Genre';
         }
     });
     
     btnUpdate.addEventListener('click', e => {
         e.preventDefault();
-        console.log(refInput.value);
-        console.log(updateInput.value);
+        const updateType = ((btnUpdate.previousElementSibling).firstElementChild).textContent;
+        console.log(updateType);
+        const where = refInput.value;
+        const set = updateInput.value;
+        const udpateData = {
+            where: where,
+            set: set
+        }
+        console.log(udpateData);
     });
 };
 
@@ -91,7 +100,12 @@ const insertListeners = () => {
         const title = insertTitleInput.value;
         const artist = insertArtistInput.value;
         const genre = insertGenreInput.value;
-        console.log(title, artist, genre);
+        const insertData = {
+            title: title,
+            artist: artist,
+            genre: genre
+        }
+        console.log(insertData);
     })
 }
 
