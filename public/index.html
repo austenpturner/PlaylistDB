@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Database</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+</head>
+<body class='bg-dark'>
+    <div class="jumbotron jumbotron-fluid bg-dark text-center pt-5 pb-3 mb-5">
+        <div class="container text-light">
+          <h1 class="display-4">Song Database</h1>
+          <p class="lead my-3">Create your own database of your favorite songs.</p>
+          <p>You can search for songs, insert songs, update songs or delete songs.</p>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='col md-3 m-3 ml-5'>
+            <div class="card bg-dark text-light border-light">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Add to Database</h5>
+                    <p class="card-text">Enter a song title, artist and genre to insert a song.</p>
+                    <a href="/insert" class="btn btn-success px-5">Insert</a>
+                </div>
+            </div>
+        </div>
+        <div class='col md-3 m-3'>
+            <div class="card bg-dark text-light border-light">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Search the Database</h5>
+                    <p class="card-text">Look up a song by entering a title, artist or genre.</p>
+                    <a href="/search" class="btn btn-primary px-5">Search</a>
+                </div>
+            </div>
+        </div>
+        <div class='col md-3 m-3'>  
+            <div class="card bg-dark text-light border-light">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Update the Database</h5>
+                    <p class="card-text">Update a song by entering a title, artist or genre.</p>
+                    <a href="/update" class="btn btn-warning text-light px-5">Update</a>
+                </div>
+            </div>
+        </div>
+        <div class='col md-3 m-3 mr-5'>
+            <div class="card bg-dark text-light border-light">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Delete from Database</h5>
+                    <p class="card-text">Enter a song title you want to remove from the database.</p>
+                    <a href="/delete" class="btn btn-danger px-5">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

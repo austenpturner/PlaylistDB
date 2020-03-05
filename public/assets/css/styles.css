@@ -1,0 +1,74 @@
+/* ----- Search Radio Buttons ----- */
+
+.switch-container {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -50px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    margin: 10px auto;
+    width: 60px;
+    height: 34px;
+}
+
+.label {
+    display: inline-block;
+    font-size: 1.2em;
+    margin-left: 60px;
+    padding: 0 20px;
+}
+
+/* Hide input checkbox but keep click/tab behavior */
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(204, 204, 204);
+    border-radius: 34px;
+    transition: 500ms;
+    transition: 500ms;
+}
+
+/* Slider toggle */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: 500ms;
+    transition: 500ms;
+}
+
+/* When input is checked change slider background color to blue */
+input:checked + .slider {
+    background-color: rgb(2,117,216);
+}
+  
+/* When input is selected with tab then give slider a box-shadow */
+input:focus + .slider {
+    box-shadow: 0 0 5px rgb(2,117,216);
+}
+
+/*  When input is checked translate slider toggle to the right */
+input:checked + .slider:before {
+    transform: translateX(26px);
+} 
+
+

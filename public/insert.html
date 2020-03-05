@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Database</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+</head>
+<body class='bg-dark' id='insert-page'>
+    <div class="jumbotron jumbotron-fluid bg-dark text-center pt-5 pb-3 mb-0">
+        <div class="container text-light">
+          <h1 class="display-4">Song Database</h1>
+          <p class="lead my-3">Create your own database of your favorite songs.</p>
+          <p>Insert a song by entering a title, artist and genre.</p>
+        </div>
+    </div>
+    <form class='text-light mx-5 '>
+    <div class='container'>
+            <div class='col-md-8 mx-auto'>
+                <div class="form-group">
+                    <label for="insert-title">Title</label>
+                    <input type="text" class="form-control" id="insert-title">
+                </div>
+                <div class="form-group">
+                    <label for="insert-artist">Artist</label>
+                    <input type="text" class="form-control" id="insert-artist">
+                </div>
+                <div class="form-group">
+                    <label for="insert-genre">Genre</label>
+                    <input type="text" class="form-control" id="insert-genre">
+                </div>
+                <button id='insert-btn' type="submit" class="btn btn-success px-5">Insert</button>
+            </div>
+        </div>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src='index.js'></script>
+</body>
+</html>
