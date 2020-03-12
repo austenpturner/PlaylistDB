@@ -1,0 +1,25 @@
+<main class='bg-dark' id='delete-page'>
+    <div class="jumbotron jumbotron-fluid bg-dark text-center pt-5 pb-3 mb-0">
+        <div class="container text-light">
+          <h1 class="display-4">Song Database</h1>
+          <p class="lead my-3">Create your own database of your favorite songs.</p>
+          <p>Delete a song by entering a song title.</p>
+        </div>
+    </div>
+
+    <form method='POST' action='/delete'>
+        <div class='container text-light'>
+            <div class='col-md-8 mx-auto mt-3'>
+                <div class="form-group">
+                    <label for="delete-title">Enter Song Title</label>
+                    <input type="text" class="form-control" id="title-delete" name='title'>
+                    <button id='delete-btn' type="submit" class="btn btn-danger px-5 my-2">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class='text-light'>
+        <p id='delete-msg'></p>
+    </div>
+</main>

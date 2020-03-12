@@ -69,6 +69,8 @@ input:focus + .slider {
 /*  When input is checked translate slider toggle to the right */
 input:checked + .slider:before {
     transform: translateX(26px);
-} 
+}
 
-
+/* #results-container {
+    color: white;
+} */

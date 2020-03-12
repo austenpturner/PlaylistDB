@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Database</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
-    <link rel='stylesheet' href='./assets/css/styles.css'/>
-</head>
-<body class='bg-dark' id='search-page'>
+<main class='bg-dark' id='search-page'>
     <div class="jumbotron jumbotron-fluid bg-dark text-center pt-5 pb-3 mb-0">
         <div class="container text-light">
           <h1 class="display-4">Song Database</h1>
@@ -42,22 +31,30 @@
                 </label>
             </div>
         </div>
+    </form>
 
+    <form class='text-light mx-5' method='POST' action='/search'>
         <div class='container'>
             <div class='col-md-8 mx-auto mt-3'>
                 <div class="form-group">
                     <label for="search" id='search-label'>Enter Title</label>
-                    <input type="text" class="form-control" id='search-input'>
+                    <input type="text" class="form-control" id='search-input' name='search'>
                 </div>
                 <button id='search-btn' type="submit" class="btn btn-primary px-5">Search</button>
             </div>
         </div>
     </form>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src='index.js'></script>
+    <div id='results-container' class='text-light'></div>
+    
+</main>
 
-</body>
-</html>
+{{!-- <ul>
+  {{#each playlist}}
+  	<li>
+  	   <p>Title: {{title}}</p>
+       <p>Artist: {{artist}}</p>
+       <p>Genre: {{genre}}</p>
+  	</li>
+  {{/each}}
+</ul> --}}
