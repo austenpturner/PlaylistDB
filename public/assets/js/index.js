@@ -31,6 +31,8 @@ const updateMsg = document.getElementById('update-msg');
 const deleteTitleInput = document.getElementById('title-delete');
 const deleteBtn = document.getElementById('delete-btn');
 const deleteMsg = document.getElementById('delete-msg');
+const deleteAlert = document.getElementById('alert-msg-container');
+const deleteAlertMsg = document.getElementById('delete-msg');
 
 window.onload = () => {
     const currentPage = document.querySelector('main').getAttribute('id');
@@ -132,11 +134,12 @@ const deleteListeners = () => {
             return res.json();
         }).then ( data => {
             if (data > 0) {
-                deleteMsg.textContent = `Deleted ${title} from database.`
+                deleteAlertMsg.textContent = `Deleted ${title} from database.`;
             } else {
-                deleteMsg.textContent = `Nothing found to delete.`
+                deleteAlertMsg.textContent = `Nothing found to delete.`;
             };
             deleteTitleInput.value = '';
+            deleteAlert.style.display = 'block';
         });
     });
 };

@@ -12,21 +12,21 @@
             <div class="form-check">
                 <label class="form-check-label switch" for='title-update'>
                     <input class='form-check-input' type="radio" name="search-type" id="title-update" value="title" checked>
-                    <span class="slider"></span>
+                    <span class="slider update"></span>
                     <span class='label'>Song</span>
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label switch" for="artist-update">
                     <input class="form-check-input" type="radio" name="search-type" id="artist-update" value="artist">
-                    <span class="slider"></span>
+                    <span class="slider update"></span>
                     <span class='label'>Artist</span>
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label switch" for="genre-update">
                     <input class="form-check-input" type="radio" name="search-type" id="genre-update" value="genre">
-                    <span class="slider"></span>
+                    <span class="slider update"></span>
                     <span class='label'>Genre</span>
                 </label>
             </div>
@@ -34,7 +34,7 @@
     </form>
 
     <form class='text-light mx-5' method='POST' action='/update'>
-        <div class='container'>
+        <div class='container text-light'>
             <div class='col-md-8 mx-auto mt-3'>
                 <div class="form-group">
                     <label for="ref-input" id='ref-label'>Enter Current Title</label>
@@ -42,7 +42,7 @@
                     <label for="update-input" id='update-label'>Enter New Title</label>
                     <input type="text" class="form-control" id="update-input" name='update-input'>
                 </div>
-                <button id='update-btn' type="submit" class="btn btn-warning text-light px-5">Update</button>
+                <button id='update-btn' type="submit" class="btn btn-warning text-light px-5 my-2">Update</button>
             </div>
         </div>
     </form>
