@@ -1,3 +1,7 @@
+* {
+    position: relative;
+}
+
 /* ----- Search Radio Buttons ----- */
 
 .switch-container {
@@ -84,4 +88,24 @@ input:checked + .slider:before {
 
 #alert-msg-container {
     display: none;
+    left: calc(100vw - 75%);
+    position: absolute;
+    top: 20vh;
+    z-index: 2;
+}
+
+#results-div {
+    display: none;
+}
+
+#results-div h5 {
+    border: 2px solid rgb(2, 117, 216);
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+@media (max-width: 768px) {
+    #alert-msg-container {
+        left: calc(100vw - 92%);
+    }
 }

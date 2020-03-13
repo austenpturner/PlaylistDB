@@ -13,6 +13,7 @@ const radioSearchGenre = document.getElementById('genre-search');
 const searchInputEl = document.getElementById('search-input');
 const searchLabel = document.getElementById('search-label');
 const searchBtn = document.getElementById('search-btn');
+const resultsDiv = document.getElementById('results-div');
 const resultsContainer = document.getElementById('results-container');
 
 // Update DOM Elements
@@ -31,7 +32,7 @@ const updateMsg = document.getElementById('update-msg');
 const deleteTitleInput = document.getElementById('title-delete');
 const deleteBtn = document.getElementById('delete-btn');
 const deleteMsg = document.getElementById('delete-msg');
-const deleteAlert = document.getElementById('alert-msg-container');
+const alertMsgEl = document.getElementById('alert-msg-container');
 const deleteAlertMsg = document.getElementById('delete-msg');
 
 window.onload = () => {
@@ -86,10 +87,11 @@ const updateListeners = () => {
             return res.json();
         }).then( data => {
             console.log(data);
+            alertMsgEl.style.display = 'block';
             if (data > 0) {
                 updateMsg.textContent = `Update successful!`;
             } else {
-                updateMsg.textContent = `Sorry, nothing was updated`;
+                updateMsg.textContent = `Sorry, nothing was updated.`;
             };
         });
     });
@@ -115,6 +117,7 @@ const insertListeners = () => {
         }).then( res => {
             return res.json();
         }).then( data => {
+            alertMsgEl.style.display = 'block';
             if (data > 0) {
                 insertMsg.textContent = `Your song has successfully been inserted into the database!`;
             } else {
@@ -139,14 +142,14 @@ const deleteListeners = () => {
                 deleteAlertMsg.textContent = `Nothing found to delete.`;
             };
             deleteTitleInput.value = '';
-            deleteAlert.style.display = 'block';
+            alertMsgEl.style.display = 'block';
         });
     });
 };
 
 const searchListeners = () => {
     searchRadioContainer.addEventListener('click', function(e) {
-        resultsContainer.textContent = '';
+        // resultsContainer.textContent = '';
         if (e.target.id === 'title-search') {
             searchLabel.textContent = 'Enter Title';
         } else if (e.target.id === 'artist-search') {
@@ -158,6 +161,7 @@ const searchListeners = () => {
 
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
+        resultsContainer.textContent = '';
         const searchValue = searchInputEl.value.trim();
         const searchData = {
             type: getSearchType(),
@@ -174,6 +178,7 @@ const searchListeners = () => {
             return res.json();
         }).then( data => {
             console.log(data);
+            resultsDiv.style.display = 'block';
             if (getSearchType() === 'title') {
                 if (data.length > 0) {
                     renderTitleResults(data);
